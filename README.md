@@ -17,9 +17,9 @@ For this project, we opted to model and 3D print the majority of the physical ro
 ### User Interface
 
 ### Bill of Materials 
-| Item          |Supplier       | Quantity | Unit Cost  | Total Cost |
-| :------------- |:-------------| :-------| :---------| ----------:|
-| 20mm Metal Caster Bearing Wheel | Adafruit | 1 | $1.95  | $1.95 |
+| Item            |Supplier       | Quantity | Unit Cost  | Total Cost |
+|:--------------- |:------------- |:-------- |:---------- | ----------:|
+| 20mm Metal Caster Bearing Wheel | Adafruit | 1  | $1.95  | $1.95 |
 | 5V Stepper Motor | Adafruit | 2 | $4.95 | $9.90 |
 | Skinny Wheel for DC Motor | Adafruit | 2 | $2.50 | $5.00 |
 | Micro servo | Adafruit | 1 | $5.95 | $5.95 |
