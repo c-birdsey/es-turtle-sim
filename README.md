@@ -115,16 +115,16 @@ A big drawback of the stepper motors we chose for this project is that they can 
 We chose not to incorporate circles and curves into this iteration of the project because we figured it would be too time consuming to code, as well as outside the range of our (relatively) inexpensive hardware. Technically, it wouldn’t be too difficult of a process (having the two wheels rotate at different speeds) but it would be rather unpredictable and would certainly compound any errors present in the hardware already. That being said, we do acknowledge that circles and curves are important parts of drawing, so we do believe they should be incorporated into future work.     
 
 ## References 
-- https://www.vivaxsolutions.com/web/python-turtle.aspx
-- https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/
-- https://pimylifeup.com/arduino-light-sensor/
-- https://wolfpaulus.com/micro-python-esp32/
-- https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf
-- https://www.arduino.cc/reference/en/#functions 
-- https://github.com/espressif/arduino-esp32 
-- https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/system/intr_alloc.html
-- https://create.arduino.cc/projecthub/reanimationxp/how-to-multithread-an-arduino-protothreading-tutorial-dd2c37
-- https://learn.adafruit.com/adafruit-arduino-lesson-16-stepper-motors/breadboard-layout
-- https://www.arduino.cc/en/Reference/Stepper
-- https://www.arduinolibraries.info/libraries/esp32-servo
-- https://docs.python.org/3.3/library/turtle.html?highlight=turtle
+- <https://www.vivaxsolutions.com/web/python-turtle.aspx>
+- <https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/>
+- <https://pimylifeup.com/arduino-light-sensor/>
+- <https://wolfpaulus.com/micro-python-esp32/>
+- <https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf>
+- <https://www.arduino.cc/reference/en/#functions>
+- <https://github.com/espressif/arduino-esp32>
+- <https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/system/intr_alloc.html>
+- <https://create.arduino.cc/projecthub/reanimationxp/how-to-multithread-an-arduino-protothreading-tutorial-dd2c37>
+- <https://learn.adafruit.com/adafruit-arduino-lesson-16-stepper-motors/breadboard-layout>
+- <https://www.arduino.cc/en/Reference/Stepper>
+- <https://www.arduinolibraries.info/libraries/esp32-servo>
+- <https://docs.python.org/3.3/library/turtle.html?highlight=turtle>
