@@ -45,8 +45,8 @@ For this project, we opted to model and 3D print the majority of the physical ro
 - *User Interface* -
 - *Live Instructions* - 
 - *Preset Letter Functions and Drawings* -
-- _Calibration -_
-- _Curves and Circles - _
+- *Calibration* -
+- *Curves and Circles* -
 
 ## References 
 - https://www.vivaxsolutions.com/web/python-turtle.aspx
