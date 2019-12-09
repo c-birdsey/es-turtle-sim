@@ -1,6 +1,10 @@
 ## Introduction 
-- Goal 
-- Motivation 
+### Goal
+- Create a physical turtle-simulating robot leveraging ES coding concepts and hands-on hardware assembly, as we have done throughout the semester
+- Create a project that shows, in the physical world, the flow of digital control
+
+### Motivation 
+- Most CS students at Middlebury work with turtle in CSCI 101 or CSCI 150. Since we are graduating soon, we wanted to tie-back one of our final electives to the first class many of us took.
 
 ## Methods 
 - Devices and Peripherals 
