@@ -4,8 +4,9 @@
    Middlebury College - Fall 2019
    Authors: Brandon Choe, Calder Birdsey
 
-   Description:
-   Usage:
+   Description: Drawing robot simulating Turtle graphics
+   library in Python. See full documentation and report at 
+   https://c-birdsey.github.io/es-turtle-sim/
 */
 
 /*---------------------------------------------------------------------*/
@@ -28,20 +29,16 @@ void right(int angle);
 int translateAngle(float angle);
 
 /* GLOBALS */
-const int STEPS_PER_REV = 513;
-const int RPM = 50;
-const float STEP_ANGLE = 0.689;
-const float WHEEL_CIRC = 18.787;
-int lightSensorPin = A1;
+const int STEPS_PER_REV = 513;    //steps per rotation
+const int RPM = 50;               //stepper RPMs
+const float STEP_ANGLE = 0.689;   //degree per step - technically 0.7 (360 / 513) but tweaked from testing
+const float WHEEL_CIRC = 18.787;  //wheel circumference - 18.787cm (7.396in)
 
-TaskHandle_t CanvasTask;
-TaskHandle_t DriveTask;
-
-bool volatile OFF_CANVAS_FLAG = false;
+/* globals for light sensor reading */
 int volatile CANVAS_READING;
-int volatile ADJ; 
+int volatile ADJUSTED_READING; 
 
-/* init stepper and sehow trvo instances */
+/* init stepper and servo instances */
 Stepper L_wheel(STEPS_PER_REV, 14, 32, 15, 33);
 Stepper R_wheel(STEPS_PER_REV, 27, 12, 13, 21);
 Servo PEN_SERVO;
@@ -57,7 +54,7 @@ void setup() {
   PEN_SERVO.setPeriodHertz(50);
   PEN_SERVO.attach(SERVO_PIN, 1000, 2000);
 
-  // initialize the serial port:
+  // initialize the serial port for debugging 
   Serial.begin(9600);
 
   //get initial canvas reading
@@ -67,91 +64,83 @@ void setup() {
     vals[i] = analogRead(lightSensorPin);
     valSum += vals[i];
   }
+  /* Store initial canvas reading in CANVAS_READING variable and 
+   * store adjusted benchmark in ADJUSTED_READING - this is 66% 
+   * less than the initial, a threshold determined via trial and 
+   * error testing. Only detects movement from light to dark 
+   * surfaces (assuming white or near-white background for drawing)
+   */
   CANVAS_READING = (valSum / 20);
-  ADJ = (CANVAS_READING / 3) * 2; 
+  ADJUSTED_READING = (CANVAS_READING / 3) * 2; 
 
-  //config tasks 
-  xTaskCreatePinnedToCore(checkCanvas, "CanvasTask", 10000, NULL, 1, &CanvasTask, 0); 
-  delay(500); 
-  xTaskCreatePinnedToCore(execInstruc, "DriveTask", 10000, NULL, 1, &DriveTask, 1); 
-  delay(500); 
+ 
 }
 
 /* parent loop */
 void loop() {
-  pen_up();
+  /* basic directions for a 10cm square */
   pen_down();
   forward(10);
   right(90);
   forward(10);
   right(90);
   forward(10);
+  right(90);
+  forward(10);
   pen_up();
-  forward(20);
+  
+  /* entering infinite while after all directions executed */
   while(1){}
 }
 
 /*----------------------- HELPER FUNCTIONS ------------------------*/
 
+/* pen_up() - function to move pen off paper via servo control*/
 void pen_up() {
-  //;Serial.println("up");
   PEN_SERVO.write(80);
-//  for (int pos = 175; pos >= 80; pos--) {
-//    PEN_SERVO.write(pos);
-//    delay(10);
-//  }
   delay(1000);
 }
 
+/* pen_down() - function to move pen onto paper via servo control */
 void pen_down() {
-  //Serial.println("down");
   PEN_SERVO.write(175);
-//  for (int pos = 80; pos <= 175; pos++) {
-//    PEN_SERVO.write(pos);
-//    delay(10);
-//  }
   delay(1000);
 }
 
+/* backward(dist) - function to move robot backward, input distance in cm */
 void backward(float dist) {
   int steps = getSteps(dist);
+  /* move both wheels a single step at a time */
   for (steps; steps > 0; steps --) {
- 
-    float measure = analogRead(lightSensorPin) - CANVAS_READING; 
-    Serial.print("measure: "); 
-    
-    Serial.println(measure); 
-    if(measure < 1500) {
-      L_wheel.step(-1);
-      R_wheel.step(1);
-      delay(10);
-    } else {
-      OFF_CANVAS_FLAG = false;
-      while(1); 
-    }
+    L_wheel.step(-1);
+    R_wheel.step(1);
+    delay(10);
   }
 }
 
+/* forward(dist) - function to move robot forward, input distance in cm */
 void forward(float dist) {
-  Serial.println("drive"); 
   int steps = getSteps(dist);
+  /* move both wheels a single step at a time */
   for (steps; steps > 0; steps --) {
+    /* get new reading from light sensor */
     float measure = analogRead(lightSensorPin); 
-    Serial.print("measure: "); 
-    Serial.println(measure); 
-    
-    if((measure - ADJ) > 100) {
+
+    /* compare measurement to adjusted reading var ADJUSTED_READING */
+    if((measure - ADJUSTED_READING) > 100) {
       L_wheel.step(1);
       R_wheel.step(-1);
       delay(10);
     } else {
-      OFF_CANVAS_FLAG = false;
+      /* if detected canvas change, enter while loop and wait for restart */
       while(1); 
     }
   }
 }
 
+/* right(angle) - function to turn robot to the right, input angle in degrees */
 void right(int angle) {
+  /* get translation of angle to steps */
   int steps = translateAngle(angle);
   for (steps; steps > 0; steps --) {
     L_wheel.step(-1);
@@ -160,7 +149,9 @@ void right(int angle) {
   }
 }
 
+/* left(angle) - function to turn robot to the left, input angle in degrees */
 void left(int angle) {
+  /* get translation of angle to steps */
   int steps = translateAngle(angle);
   for (steps; steps > 0; steps --) {
     L_wheel.step(1);
@@ -169,35 +160,20 @@ void left(int angle) {
   }
 }
 
+/* getSteps(dist) - function to convert distance to steps using the measured 
+ * circumference of wheels and steps per revolution of steppers, returns 
+ * step count as integer
+ */
 int getSteps(float dist) {
-  // one rotation is 18.787cm (7.396in), each step is 0.037cm (0.0144in)
   float step_dist = WHEEL_CIRC / STEPS_PER_REV;
   int steps = dist / step_dist;
   return steps;
 }
 
+/* translateAngle(angle) - function to convert angle to steps using global
+ * STEP_ANGLE which stores steps per degree, returns step count as integer
+ */
 int translateAngle(float angle) {
-//  Serial.print("ANGLE: ");
-//  Serial.println(angle);
-//  Serial.print("STEP PER DEGREE: ");
-//  Serial.println(STEP_ANGLE);
-  int steps = 2 * (angle / STEP_ANGLE);
-//  Serial.print("STEPS: ");
-//  Serial.println(steps);
+  int steps = angle / STEP_ANGLE;
   return steps;
 }
-
-//ISR(PCINT0_vect) {
-//  //read new vals from light sensor
-//  int vals[20];
-//  int valSum = 0;
-//  for(int i = 0; i < 20; i++) {
-//     vals[i] = analogRead(lightSensorPin);
-//     valSum += vals[i];
-//  }
-//  //get new average and compare to initial
-//  int avg = (valSum / 20);
-//  if((avg / CANVAS_READING) < 0.66) {
-//    end();
-//  }
-//}
