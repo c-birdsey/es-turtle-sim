@@ -1,5 +1,3 @@
-## CSCI435 Embedded Systems - Final Project 
-
 ## Introduction 
 
 ## Methods 
