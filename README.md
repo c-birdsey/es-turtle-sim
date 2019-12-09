@@ -2,8 +2,9 @@
 ### Brandon Choe, Calder Birdsey - December 2019 
 ## Introduction 
 ### Goal
-- Create a physical turtle-simulating robot leveraging ES coding concepts and hands-on hardware assembly, as we have done throughout the semester
-- Create a project that shows, in the physical world, the flow of digital control
+Our main goal for this project was to leverage the software and hardware concepts we learned over the course of this semester to create physical simulation of the turtle library in python. We also wanted to demonstrate a physical representation of the flow from high level commands in our code, to the individual peripherals and components, to a cohesive robot that you could watch perform your inputs.   
+
+The motivation for this project stemmed from our introduction to the computer science major at Middlebury. In both of our intro classes, we used the turtle library in python to practice recursions. Now, as we are wrapping up our penultimate semester at Middlebury, we wanted to return to our humble roots as freshmen and recreate one of the most frustrating parts of our first year, but while tying together everything we learned from this past semester.  
 
 ### Motivation 
 - Most CS students at Middlebury work with turtle in CSCI 101 or CSCI 150. Since we are graduating soon, we wanted to tie-back one of our final electives to the first class many of us took.
