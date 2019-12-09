@@ -1,1 +1,2 @@
 # es-turtle-sim
+# Notes 
