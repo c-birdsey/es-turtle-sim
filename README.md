@@ -16,10 +16,15 @@
 
 | Item          |Supplier       | Quantity | Unit Cost  | Total Cost |
 | ------------- |:-------------:| :-------:| :---------:| ----------:|
-| 20mm Metal Caster Bearing Wheel|Adafruit | 1 | $1.95 |
-| 5V Stepper Motor |Adafruit | 2 | 
-| 3             |supplier       |    $1 |
-
+| 20mm Metal Caster Bearing Wheel| Adafruit | 1 | $1.95  | $1.95 |
+| 5V Stepper Motor |Adafruit | 2 | $4.95 | $9.90 |
+| Skinny Wheel for DC Motor | Adafruit | 2 | $2.50 | $5.00 |
+| Micro servo | 1 | Adafruit | $5.95 | $5.95 |
+| 4xAA Battery Holder w/switch | Adafruit | 1 | $2.95 | $2.95 |
+| Half Sized Breadboard | Sparkfun | 1 | $4.95 | $4.95 |
+| 8-Channel Darlington Driver | Adafruit | 1 | $1.95 | $1.95 |
+| Photo Cell - CdS Photoresistor | Adafruit | 1 | $0.95 | $0.95 |
+| Diffused Red 5mm LED | Adafruit | 1 | $4.00 (25-pack) | $4.00 |
 
 ## Results 
 - Video
