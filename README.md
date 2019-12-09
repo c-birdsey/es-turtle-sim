@@ -56,8 +56,7 @@ For this project, we opted to model and 3D print the majority of the physical ro
 - Video
 
 [![Photoresistors]({/img/photoresistor-img.jpg})]({https://drive.google.com/file/d/1qrff_zdK6xWhZOJm2RL2-cdg02QwqyaU/view?usp=sharing} "Photoresistors")
-[![Drawing]({/img/draw-img.jpg})]({https://drive.google.com/file/d/1iHSxn1WZR-QDcf7Hkx0Y760qUZxlPzAe/view?usp=sharing} "Photoresistors")
-
+[![Drawing]({/img/draw-img.jpg})]({https://drive.google.com/file/d/1iHSxn1WZR-QDcf7Hkx0Y760qUZxlPzAe/view?usp=sharing} "Drawing")
 
 ## Schedule 
 - Gantt Chart 
