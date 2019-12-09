@@ -1,12 +1,12 @@
 ## Introduction 
-⋅⋅* Goal 
-⋅⋅* Motivation 
+- Goal 
+- Motivation 
 
 ## Methods 
-⋅⋅* Devices and Peripherals 
-⋅⋅* Code Logic 
-⋅⋅* User Interface
-⋅⋅* Bill of Materials 
+- Devices and Peripherals 
+- Code Logic 
+- User Interface
+- Bill of Materials 
 
 | Item          |Supplier       | Cost  |
 | ------------- |:-------------:| -----:|
@@ -16,18 +16,18 @@
 
 
 ## Results 
-⋅⋅* Video
+- Video
 
 ## Schedule 
-⋅⋅* Gantt Chart 
+- Gantt Chart 
 
 ## Issues 
-⋅⋅* Issue 1
-⋅⋅* Issue 2
+- Issue 1
+- Issue 2
 
 ## Future Work 
-⋅⋅* User Interface 
-⋅⋅* Curves and circles 
+- User Interface 
+- Curves and circles 
 
 ## References 
 
