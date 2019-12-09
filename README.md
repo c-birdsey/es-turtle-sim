@@ -9,11 +9,10 @@
 - Most CS students at Middlebury work with turtle in CSCI 101 or CSCI 150. Since we are graduating soon, we wanted to tie-back one of our final electives to the first class many of us took.
 
 ## Methods 
-- Devices and Peripherals 
-- Code Logic 
-- User Interface
-- Bill of Materials 
-
+### Devices and Peripherals 
+### Code Logic 
+### User Interface
+### Bill of Materials 
 | Item          |Supplier       | Quantity | Unit Cost  | Total Cost |
 | ------------- |:-------------:| :-------:| :---------:| ----------:|
 | 20mm Metal Caster Bearing Wheel| Adafruit | 1 | $1.95  | $1.95 |
