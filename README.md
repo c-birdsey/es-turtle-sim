@@ -14,10 +14,10 @@
 - User Interface
 - Bill of Materials 
 
-| Item          |Supplier       | Cost  |
-| ------------- |:-------------:| -----:|
-| 1             |supplier       | $1600 |
-| 2             |supplier       |   $12 |
+| Item          |Supplier       | Quantity | Unit Cost  | Total Cost |
+| ------------- |:-------------:| :-------:| :---------:| ----------:|
+| 20mm Metal Caster Bearing Wheel|Adafruit | 1 | $1.95 |
+| 5V Stepper Motor |Adafruit | 2 | 
 | 3             |supplier       |    $1 |
 
 
@@ -33,7 +33,7 @@
 
 ## Future Work 
 - User Interface 
-- Curves and circles 
+- Curves and Circles 
 
 ## References 
 
