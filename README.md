@@ -1,4 +1,4 @@
-# CSCI435 Embedded Systems - Final Project 
+## CSCI435 Embedded Systems - Final Project 
 
 ## Introduction 
 
