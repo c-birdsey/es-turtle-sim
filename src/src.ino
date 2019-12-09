@@ -23,9 +23,9 @@ void pen_up(void);
 void pen_down(void);
 void forward(float dist);
 void backward(float dist);
-int getSteps(float dist);
 void left(int angle);
 void right(int angle);
+int getSteps(float dist);
 int translateAngle(float angle);
 
 /* GLOBALS */

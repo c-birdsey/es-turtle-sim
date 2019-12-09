@@ -4,5 +4,5 @@
 @import "{{ site.theme }}";
 
 .small {
-    display: none;
+    display: none !important;
 }
