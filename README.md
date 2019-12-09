@@ -28,7 +28,7 @@ For this project, we opted to model and 3D print the majority of the physical ro
 | 8-Channel Darlington Driver | Adafruit | 1 | $1.95 | $1.95 |
 | Photo Cell - CdS Photoresistor | Adafruit | 1 | $0.95 | $0.95 |
 | Diffused Red 5mm LED | Adafruit | 1 | $4.00 (25-pack) | $4.00 |
-|---|---|---|---|**$37.60**|
+|||||**$37.60**|
 
 
 ## Results 
