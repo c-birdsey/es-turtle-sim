@@ -8,20 +8,20 @@ Our main goal for this project was to leverage the software and hardware concept
 The motivation for this project stemmed from our introduction to the computer science major at Middlebury. In both of our intro classes, we used the turtle library in python to practice recursions. Now, as we are wrapping up our penultimate semester at Middlebury, we wanted to return to our humble roots as freshmen and recreate one of the most frustrating parts of our first year, but while tying together everything we learned from this past semester.    
 
 ## Methods 
-### Devices and Peripherals 
-**5V Stepper Motor** 
+### Devices and Peripherals   
+**5V Stepper Motor**   
 The 5V Stepper Motors are arguably the most important peripherals we used to create our robot, as they offered very precise control over the distance we wanted our robot to travel or turn. The specific motors we used have 513 steps per revolution. Combined with our wheels that had a circumference of 18.78 centimeters, each step was 0.037 centimeters, giving our robot a significant level of precision, which leads to precise drawings.   
 
-**8-Channel Darlington Driver**   
+**8-Channel Darlington Driver**    
 The 8-Channel Darlington Driver was a necessity for our project, because without it, the stepper motors would not have been able to draw enough power to drive our robot. The driver allows the motors to still receive instructions from the Feather, but supplies the motors with a seperate voltage.   
-
-**20mm Metal Caster Bearing Wheel**  
+ 
+**20mm Metal Caster Bearing Wheel**   
 This bearing wheel was essential for giving the robot to reliably change its angle without changing the location of the pen. This feature is obviously very important when designing a robot for drawings, as a typical drawing has dozens of angles, and even a small error would compound into a very visible error if the angles are not precise. 
 
-**Micro Servo**  
-We used this peripheral to control the penUp() and penDown() commands. The sirvo simply lifts a small piece of metal attached to the pen, lifting the pen off, or lowering it onto the canvas. This function is also very important to a drawing robot, as most drawings will not be one continuous line, but will have discontinuities. This feature allows for that possibility.   
+**Micro Servo**   
+We used this peripheral to control the pen_up() and pen_down() commands. The servo simply lifts a small piece of metal attached to the pen, lifting the pen off, or lowering it onto the canvas. This function is also very important to a drawing robot, as most drawings will not be one continuous line, but will have discontinuities. This feature allows for that possibility.   
 
-**Diffused RED 5mm LED**   
+**Diffused RED 5mm LED**    
 This LED is one of two parts needed for the feature of our robot that checks if the robot is going to drive off the canvas. The LED, using a small paper cone,shines a light under the robot, about three centimeters from the front.   
 
 **Photoresistor**  
