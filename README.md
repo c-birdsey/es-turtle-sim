@@ -42,9 +42,9 @@ For this project, we opted to model and 3D print the majority of the physical ro
 - _Angle Accuracy - _
 
 ## Future Work 
-- _User Interface - _
-- _Live Instructions - _
-- _Preset Letter Functions and Drawings - _
+- *User Interface* -
+- *Live Instructions* - 
+- *Preset Letter Functions and Drawings* -
 - _Calibration -_
 - _Curves and Circles - _
 
