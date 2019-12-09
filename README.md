@@ -16,7 +16,14 @@ For this project, we opted to model and 3D print the majority of the physical ro
 
 ### User Interface
 
-### Bill of Materials 
+### Bill of Materials
+
+| Tables        | Are           | Cool  |
+| :------------ |:------------- | -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 | Item            |Supplier       | Quantity | Unit Cost  | Total Cost |
 |:--------------- |:------------- |:-------- |:---------- | ----------:|
 | 20mm Metal Caster Bearing Wheel | Adafruit | 1  | $1.95  | $1.95 |
