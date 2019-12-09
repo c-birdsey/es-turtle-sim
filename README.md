@@ -1,4 +1,4 @@
-# Turtle Simulating Robot !
+# Turtle Simulating Robot
 ### Brandon Choe, Calder Birdsey - December 2019 
 ## Introduction 
 ### Goal
