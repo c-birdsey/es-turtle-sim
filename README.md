@@ -55,8 +55,8 @@ For this project, we opted to model and 3D print the majority of the physical ro
 ## Results 
 - Video
 
-[<img src="/img/draw-img.jpg?raw=true">](https://drive.google.com/file/d/1qrff_zdK6xWhZOJm2RL2-cdg02QwqyaU/view?usp=sharing)
-[<img src="/img/photoresistor-img.jpg?raw=true">](https://drive.google.com/file/d/1iHSxn1WZR-QDcf7Hkx0Y760qUZxlPzAe/view?usp=sharing)
+[<img src="https://c-birdsey.github.io/es-turtle-sim/img/draw-img.jpg">](https://drive.google.com/file/d/1qrff_zdK6xWhZOJm2RL2-cdg02QwqyaU/view?usp=sharing)
+[<img src="https://c-birdsey.github.io/es-turtle-sim/img/photoresistor-img.jpg">](https://drive.google.com/file/d/1iHSxn1WZR-QDcf7Hkx0Y760qUZxlPzAe/view?usp=sharing)
 
 ## Schedule 
 - Gantt Chart 
