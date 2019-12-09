@@ -1,3 +1,5 @@
+# Turtle Simulating Robot 
+### Brandon Choe, Calder Birdsey - December 2019 
 ## Introduction 
 ### Goal
 - Create a physical turtle-simulating robot leveraging ES coding concepts and hands-on hardware assembly, as we have done throughout the semester
