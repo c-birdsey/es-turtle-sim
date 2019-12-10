@@ -1,11 +1,10 @@
 # Turtle Simulating Robot
 ### Brandon Choe, Calder Birdsey - December 2019 
 ## Introduction 
-### Goal
-Our main goal for this project was to leverage the software and hardware concepts we learned over the course of this semester to create physical simulation of the [Turtle graphics library](https://docs.python.org/3.3/library/turtle.html?highlight=turtle)  in Python. We also wanted to demonstrate a physical representation of the flow from high level commands in our code, to the individual peripherals and components, to a cohesive robot that you could watch perform your inputs in the real world. This connection between hardware and software was a key part of the course, and something we really wanted to explore in our final project.    
 
-### Motivation 
-The motivation for this project stemmed from our introduction to the computer science major at Middlebury. In both of our intro classes (CSCI101 and CSCI150), we used the Turtle library in Python to practice recursions. Now, as we are wrapping up our penultimate semester at Middlebury, we wanted to return to our humble roots as freshmen and recreate one of the most frustrating parts of our first year, but while tying together everything we learned from this past semester and implementing the relatively simply graphics library in far more complex and challenging manner.   
+Our main goal for this project was to leverage the software and hardware concepts we learned over the course of this semester to create physical simulation of the [Turtle graphics library](https://docs.python.org/3.3/library/turtle.html?highlight=turtle) in Python. We also wanted to demonstrate a physical representation of the flow from high level commands in our code, to the individual peripherals and components, to a cohesive robot that you could watch perform your inputs in the real world. This connection between hardware and software was a key part of the course, and something we really wanted to explore in our final project.    
+
+The motivation for this project stemmed from our introduction to the computer science major at Middlebury. In both of our intro classes (CSCI101 and CSCI150), we used the Turtle library in Python to practice recursions. Now, as we are wrapping up our penultimate semester at Middlebury, we wanted to return to our humble roots as freshmen and recreate one of the most frustrating parts of our first year, but while tying together everything we learned from this past semester and implementing the relatively simply graphics library in far more complex and challenging manner.        
 
 ## Methods 
 ### Devices and Peripherals   
