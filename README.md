@@ -1,11 +1,10 @@
 # Turtle Simulating Robot
 ### Brandon Choe, Calder Birdsey - December 2019 
 ## Introduction 
-### Goal
-Our main goal for this project was to leverage the software and hardware concepts we learned over the course of this semester to create physical simulation of the [Turtle graphics library](https://docs.python.org/3.3/library/turtle.html?highlight=turtle)  in Python. We also wanted to demonstrate a physical representation of the flow from high level commands in our code, to the individual peripherals and components, to a cohesive robot that you could watch perform your inputs in the real world. This connection between hardware and software was a key part of the course, and something we really wanted to explore in our final project.    
 
-### Motivation 
-The motivation for this project stemmed from our introduction to the computer science major at Middlebury. In both of our intro classes (CSCI101 and CSCI150), we used the Turtle library in Python to practice recursions. Now, as we are wrapping up our penultimate semester at Middlebury, we wanted to return to our humble roots as freshmen and recreate one of the most frustrating parts of our first year, but while tying together everything we learned from this past semester and implementing the relatively simply graphics library in far more complex and challenging manner.   
+Our main goal for this project was to leverage the software and hardware concepts we learned over the course of this semester to create physical simulation of the [Turtle graphics library](https://docs.python.org/3.3/library/turtle.html?highlight=turtle) in Python. We also wanted to demonstrate a physical representation of the flow from high level commands in our code, to the individual peripherals and components, to a cohesive robot that you could watch perform your inputs in the real world. This connection between hardware and software was a key part of the course, and something we really wanted to explore in our final project.    
+
+The motivation for this project stemmed from our introduction to the computer science major at Middlebury. In both of our intro classes (CSCI101 and CSCI150), we used the Turtle library in Python to practice recursions. Now, as we are wrapping up our penultimate semester at Middlebury, we wanted to return to our humble roots as freshmen and recreate one of the most frustrating parts of our first year, but while tying together everything we learned from this past semester and implementing the relatively simply graphics library in far more complex and challenging manner.        
 
 ## Methods 
 ### Devices and Peripherals   
@@ -31,7 +30,7 @@ This LED is one of two parts needed for the feature of our robot that checks if 
 **Photoresistor**  
 The photoresistor reads how much light from the LED is bouncing back from the surface of the canvas onto the photoresistor. Thus, if the robot is moving off the white canvas onto a darker surface, such as a wooden desk or carpeted floor, less light will be measured by the sensor. If the drop in measurement is significant enough (approximately 33% drop), the robot immediately stops its forward movement and waits for a hard reset.   
 
-[<img src="https://c-birdsey.github.io/es-turtle-sim/img/led.png">]
+<img src="https://c-birdsey.github.io/es-turtle-sim/img/led.png">
 
 ### Physical Design
 For this project, we opted to model and 3D print the majority of the physical robot frame. This allowed for a strong, reproducible design that was efficient and easily tweakable. The frame is fairly simple, with the breadboard and battery balancing the weight on either side. We decided to use two traditional wheels in conjunction with the caster ball bearing, as this allowed for precise turning while drawing. If was quite important for the robot to be able to turn on itself exactly, as it would severely impact the drawing if not. This also informed the location of the pen, which sits directly between the two wheels in a 20mm slot. The servo fits snugly in between the battery pack and pen slot, and like the battery pack and breadboard does not need adhesives of any sort to stay connected to the board. The entire robot frame was printed on a MakerBot Replicator 3D Printer, and the .stl files are included in the repository for this project.   
@@ -41,13 +40,17 @@ Essentially, our robot relies on a small set of basic commands to execute its dr
 
 We are also relying on Arduino’s Stepper.h library to create stepper instances, as well as ESP32Servo.h to control and initialize the micro servo (see code snippets below). These two libraries take care of much of the low level initialization, and we could simply interact with the abstracted C++/Arduino syntax. This is all done within the setup() function in Arduino.    
 
-`// init stepper instances  
+```cpp
+// init stepper instances  
 Stepper L_wheel(STEPS_PER_REV, 14, 32, 15, 33);     
-Stepper R_wheel(STEPS_PER_REV, 27, 12, 13, 21);` 
+Stepper R_wheel(STEPS_PER_REV, 27, 12, 13, 21);
+``` 
 
-`//set servo params with standard 50 Hz  
+```cpp
+//set servo params with standard 50 Hz  
 PEN_SERVO.setPeriodHertz(50);  
-PEN_SERVO.attach(SERVO_PIN, 1000, 2000);`
+PEN_SERVO.attach(SERVO_PIN, 1000, 2000);
+```
 
 This is also where we are taking an initial reading with the photoresistor to establish a baseline for the canvas color. Within the forward function, we calculate a new canvas reading and compare it to the global baseline - this is how we are implementing the off-canvas detection functionality.   
 
@@ -68,7 +71,7 @@ With this project, the addition of a user interface was initially a stretch goal
 | 8-Channel Darlington Driver | Adafruit | 1 | $1.95 | $1.95 |
 | Photo Cell - CdS Photoresistor | Adafruit | 1 | $0.95 | $0.95 |
 | Diffused Red 5mm LED | Adafruit | 1 | $4.00 (25-pack) | $4.00 |
-|||||**$37.60**|
+|||||**$59.55**|
 
 
 ## Results   
@@ -83,7 +86,7 @@ The second video highlights the addition of the photoresistor and LED. In the fi
 [<img src="https://c-birdsey.github.io/es-turtle-sim/img/photoresistor-img.jpg">](https://drive.google.com/file/d/1iHSxn1WZR-QDcf7Hkx0Y760qUZxlPzAe/view?usp=sharing)
 
 ## Schedule   
-<img src="https://c-birdsey.github.io/es-turtle-sim/img/schedule.png">]
+<img src="https://c-birdsey.github.io/es-turtle-sim/img/schedule.png">
 
 For the most part, we stayed on track with our original schedule. We originally weren’t planning on including the photoresistor and LED to track the robots position, but we were able to get ahead of schedule to create time for the photoresistor and LED. The reason we were able to squeeze more goals into the given timeline of the project is that we overestimated how long it would take to implement basic movement and pen control. These were phases that we thought would be more time consuming and hands-on, and for the most part we were able to assemble the robot smoothly.   
 
@@ -111,16 +114,16 @@ A big drawback of the stepper motors we chose for this project is that they can 
 We chose not to incorporate circles and curves into this iteration of the project because we figured it would be too time consuming to code, as well as outside the range of our (relatively) inexpensive hardware. Technically, it wouldn’t be too difficult of a process (having the two wheels rotate at different speeds) but it would be rather unpredictable and would certainly compound any errors present in the hardware already. That being said, we do acknowledge that circles and curves are important parts of drawing, so we do believe they should be incorporated into future work.     
 
 ## References 
-- https://www.vivaxsolutions.com/web/python-turtle.aspx
-- https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/
-- https://pimylifeup.com/arduino-light-sensor/
-- https://wolfpaulus.com/micro-python-esp32/
-- https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf
-- https://www.arduino.cc/reference/en/#functions 
-- https://github.com/espressif/arduino-esp32 
-- https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/system/intr_alloc.html
-- https://create.arduino.cc/projecthub/reanimationxp/how-to-multithread-an-arduino-protothreading-tutorial-dd2c37
-- https://learn.adafruit.com/adafruit-arduino-lesson-16-stepper-motors/breadboard-layout
-- https://www.arduino.cc/en/Reference/Stepper
-- https://www.arduinolibraries.info/libraries/esp32-servo
-- https://docs.python.org/3.3/library/turtle.html?highlight=turtle
+- <https://www.vivaxsolutions.com/web/python-turtle.aspx>
+- <https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/>
+- <https://pimylifeup.com/arduino-light-sensor/>
+- <https://wolfpaulus.com/micro-python-esp32/>
+- <https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf>
+- <https://www.arduino.cc/reference/en/#functions>
+- <https://github.com/espressif/arduino-esp32>
+- <https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/system/intr_alloc.html>
+- <https://create.arduino.cc/projecthub/reanimationxp/how-to-multithread-an-arduino-protothreading-tutorial-dd2c37>
+- <https://learn.adafruit.com/adafruit-arduino-lesson-16-stepper-motors/breadboard-layout>
+- <https://www.arduino.cc/en/Reference/Stepper>
+- <https://www.arduinolibraries.info/libraries/esp32-servo>
+- <https://docs.python.org/3.3/library/turtle.html?highlight=turtle>
