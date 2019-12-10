@@ -132,7 +132,7 @@ void forward(float dist) {
       R_wheel.step(-1);
       delay(10);
     } else {
-      /* if detected canvas change, enter while loop and wait for restart */
+      /* if detected canvas change, enter infinite while loop and wait for restart */
       while(1); 
     }
   }
